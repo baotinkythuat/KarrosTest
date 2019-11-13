@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "b808cd7e-eb25-4e12-bcfe-23be05fc6daa",
+		"name": "Karros",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Karros-Get 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dee766f6-9376-402c-82dc-6164a7d976a6",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"pm.test(\"Result is valid. Id:\" + jsonData.id, function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id).to.eql(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://my-json-server.typicode.com/typicode/demo/posts/1",
+					"protocol": "https",
+					"host": [
+						"my-json-server",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"typicode",
+						"demo",
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Karros-Get all",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6bf94f7d-12a9-446a-aa22-9cf736a58cfb",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var data = pm.response.json();",
+							"",
+							"pm.test('Number of items: ' + data.length, function () {",
+							"    pm.expect(data.length).to.equal(3);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://my-json-server.typicode.com/typicode/demo/posts/",
+					"protocol": "https",
+					"host": [
+						"my-json-server",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"typicode",
+						"demo",
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Karros-Get 0",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e639e923-9983-4320-a29c-466fce57beed",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://my-json-server.typicode.com/typicode/demo/posts/0",
+					"protocol": "https",
+					"host": [
+						"my-json-server",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"typicode",
+						"demo",
+						"posts",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Karros-Get huge number",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8848f83d-2213-4e6b-9bc7-95f3f02c1458",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://my-json-server.typicode.com/typicode/demo/posts/99999999999999999999999999",
+					"protocol": "https",
+					"host": [
+						"my-json-server",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"typicode",
+						"demo",
+						"posts",
+						"99999999999999999999999999"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Karros-Get nagative id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "19fd074f-6c5b-42d3-ac6d-6eb124c98960",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://my-json-server.typicode.com/typicode/demo/posts/-1",
+					"protocol": "https",
+					"host": [
+						"my-json-server",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"typicode",
+						"demo",
+						"posts",
+						"-1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Karros-Get 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "485d51c3-f58b-453e-87bd-d1469d0c9548",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://my-json-server.typicode.com/typicode/demo/posts/4",
+					"protocol": "https",
+					"host": [
+						"my-json-server",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"typicode",
+						"demo",
+						"posts",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Karros-Get the last item",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dee766f6-9376-402c-82dc-6164a7d976a6",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"pm.test(\"Result is valid. Id:\" + jsonData.id, function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id).to.eql(3);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://my-json-server.typicode.com/typicode/demo/posts/3",
+					"protocol": "https",
+					"host": [
+						"my-json-server",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"typicode",
+						"demo",
+						"posts",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
